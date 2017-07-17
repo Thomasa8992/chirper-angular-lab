@@ -36,9 +36,10 @@ app.route('/api/chirps')
                 chirps.push(chirp);
                 fs.writeFile(jsonPath, JSON.stringify(chirps), function(err, success) {
                     if (err) {
-                        res.status(500);
+                        res.sendStatus(500);
                     } else {
-                        res.sendStatus(201);
+                        res.status(201);
+                        res.send(chirp);
                     }
                 });
             }
