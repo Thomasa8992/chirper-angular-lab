@@ -1,0 +1,34 @@
+.subBtn {
+    margin:0 auto;
+    margin-bottom: 300px;
+    margin-top: 150px;
+    color: black;
+
+}
+
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+.welcome {
+    text-align: center;
+    color:yellow;
+}
+
+#btn-container {
+    transform: translateX(45%);    
+}
+#tweetie {
+    height: 300px;
+    transform: translateX(220%) translateY(-160%);
+}
+#tweetieBtn{
+    transform:translateX(-220%);
+}
+
+#sylvesterBtn{
+    transform:translateX(520%);
+    /*transform:translateY(-160%);*/
+}
