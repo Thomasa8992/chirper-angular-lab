@@ -9,7 +9,7 @@
 body{
     max-width: 1200px;
     margin: 0 auto;
-    background-color: blue;
+    background-color: yellow;
 }
 
 .welcome {
@@ -31,4 +31,8 @@ body{
 #sylvesterBtn{
     transform:translateX(520%);
     /*transform:translateY(-160%);*/
+}
+
+#delete-button {
+    text-align: right;
 }

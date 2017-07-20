@@ -1,12 +1,14 @@
-<div ng-controller="chirpReq" >
-    <form>
-        <input type="text" placeholder="user" ng-model="user">
-        <input type="text" placeholder="message" ng-model= "message">
-    <input  type="submit" value="New Chirp!" ng-click="insertData()">
-    </form>
-
-    <div ng-repeat="chirps in chirpList">
-        <p> User: {{ chirps.user }} </p>
-        <p>Chirped: {{ chirps.message }}</p>
+<body id="">
+    <div ng-controller="chirpReq">
+        <form>
+            <input type="text" placeholder="user" ng-model="user">
+            <input type="text" placeholder="message" ng-model= "message">
+        <input  type="submit" value="New Chirp!" ng-click="insertData()">
+        </form>
+        <div ng-repeat="chirps in chirpList" ng-click="goToSingle(chirps.id)">
+            <p> User: {{ chirps.user }} </p>
+            <span>Chirped: {{ chirps.message }}</span>
+            <input type="submit" value="Delete Chirp" ng-click="deleteData()">
+        </div>
     </div>
-</div>
+</body>
