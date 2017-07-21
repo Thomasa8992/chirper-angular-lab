@@ -6,7 +6,7 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../views/home.html'
         }).when('/list', {
             templateUrl: '../views/list.html'
-        }).when('/single/:id', {
+        }).when('/single/one/:id', {
             templateUrl: '../views/single.html'
         }).when('/add', {
             templateUrl: '../views/add.html'
@@ -17,7 +17,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 var controlApp = angular.module('controllers', []);
 controlApp.controller('chirpReq', function($scope, $http, $location, $routeParams) {
     $scope.goToSingle = function(id){
-        $location.path("/single/" + id);           
+        $location.path("/single/one/" + id);           
     } 
     $http.get('/api/chirps')
     .then(function (response) {
