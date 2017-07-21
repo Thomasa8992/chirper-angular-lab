@@ -29,13 +29,14 @@ body{
 }
 #taz-div{
     float: right;
+    margin-bottom: 100px;    
 }
 #taz-delete {
     border: 5px solid red;
     border-radius: 50%;
     height: 75px;
-    display: block;
-    transform: translate(35%, -465%);
+    /*display: block;*/
+    /*transform: translate(35%, -465%);*/ 
 }
 
 #user {
@@ -132,7 +133,4 @@ input {
     border-radius: 10px;
     border: blue solid 2px;
     background-color: yellow;
-}
-#rtnBtnDiv{
-    
 }

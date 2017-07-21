@@ -66,7 +66,6 @@ controlApp.controller("singleController", function($scope, $routeParams, $http, 
                 $http.get('/api/chirps')
                 .then(function (response) {
                 console.log(response);
-                $scope.singleList = response.data;
                 $location.path("/list/"); 
             });
         });    

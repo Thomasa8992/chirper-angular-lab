@@ -2,16 +2,18 @@
 <h1 id="chirps-header">Chirps!</h1>
 <div ng-controller="chirpReq" >
     <div ng-repeat="chirps in chirpList" id="result">
-        <div  ng-click="goToSingle(chirps.id)">
+        <div ng-click="deleteData(chirps.id)" id="taz-div">         
+            <img id="taz-delete" src="https://s-media-cache-ak0.pinimg.com/originals/b3/ce/6d/b3ce6d2834da3416e91c71e6db816f4c.jpg" alt="">
+        </div>
+        <div ng-click="goToSingle(chirps.id)">
             <p id="user">User:  </p>
             <p id="userName"> {{ chirps.user }} </p>
             <hr>
             <div id="message">Chirped: </div>
             <div id="userMessage">{{ chirps.message }}</div>
+           
         </div>
-        <div ng-click="deleteData(chirps.id)" id="taz-div">         
-            <img id="taz-delete" src="https://s-media-cache-ak0.pinimg.com/originals/b3/ce/6d/b3ce6d2834da3416e91c71e6db816f4c.jpg" alt="">
-        </div>
+         
     </div>
 </div>
 <div id="rtnBtnDiv">
