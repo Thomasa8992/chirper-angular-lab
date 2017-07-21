@@ -1,14 +1,12 @@
-<body id="">
-    <div ng-controller="chirpReq">
-        <form>
-            <input type="text" placeholder="user" ng-model="user">
-            <input type="text" placeholder="message" ng-model= "message">
-        <input  type="submit" value="New Chirp!" ng-click="insertData()">
-        </form>
-        <div ng-repeat="chirps in chirpList" ng-click="goToSingle(chirps.id)">
-            <p> User: {{ chirps.user }} </p>
-            <span>Chirped: {{ chirps.message }}</span>
-            <input type="submit" value="Delete Chirp" ng-click="deleteData()">
+<body id="add-page">
+    <div ng-controller="postReq">
+        <div id="inputDiv">
+            <form>
+                <input type="text" placeholder="user" ng-model="user" required>
+                <input id="messageInput" type="text" placeholder="message" ng-model= "message" required>
+                <input id="inputBtn" type="submit" value="New Chirp!" ng-click="insertData()"></a>
+            </form>
         </div>
     </div>
 </body>
+            <img id="sylvester" src="https://img14.deviantart.net/89eb/i/2012/289/b/7/sylvester_the_cat_by_captainjackharkness-d5i1n66.png" alt="">

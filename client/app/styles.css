@@ -1,38 +1,138 @@
-.subBtn {
-    margin:0 auto;
-    margin-bottom: 300px;
-    margin-top: 150px;
-    color: black;
-
-}
-
 body{
     max-width: 1200px;
     margin: 0 auto;
-    background-color: yellow;
+    background-color: lightblue;
 }
 
+.subBtn {
+    font-size: 1em;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: yellow;
+}
 .welcome {
     text-align: center;
     color:yellow;
+    text-shadow: 1px 1px 1px blue;
+    font-size: 80px;
 }
 
-#btn-container {
-    transform: translateX(45%);    
+#tweety{
+    transform: translateX(40%);
 }
-#tweetie {
-    height: 300px;
-    transform: translateX(220%) translateY(-160%);
-}
-#tweetieBtn{
-    transform:translateX(-220%);
+#tweetieBtn {
+    transform: translateX(70%) translateY(-2110%);
 }
 
-#sylvesterBtn{
-    transform:translateX(520%);
-    /*transform:translateY(-160%);*/
+#listBtn {
+    transform: translate(28%, -700%);
+}
+#taz-div{
+    float: right;
+}
+#taz-delete {
+    border: 5px solid red;
+    border-radius: 50%;
+    height: 75px;
+    display: block;
+    transform: translate(35%, -465%);
 }
 
-#delete-button {
-    text-align: right;
+#user {
+    font-size: 2em;
+    margin: 20px;
+    text-align: center;
+    
+    
+}
+
+#message {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 25px;
+    
+}
+
+#result {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: yellow;
+    margin: 50px;
+    word-wrap: break-word;
+    
+    
+}
+
+#userName {
+    font-size: 2em;    
+    text-align: center;
+}
+
+hr {
+    width: 1000px;
+    margin-bottom: 30px 0;
+    color:blue;
+    
+}
+
+#userMessage{
+    margin: 40px 40px;;
+    font-size: 2em;
+    text-align: center;
+}
+
+#chirps-header {
+    font-size: 5em;
+    text-align: center;
+}
+
+#group-photo{
+    transform: translateX(150%);
+}
+
+input {
+    font-size: 50px;
+    display: block;
+    margin: 20px auto; 
+    transform:translateY(150%);
+    border: 2px solid Blue;
+    padding: 0 20px;
+}
+
+#inputDiv{
+    position:relative;
+    margin: 200px auto; 
+    padding-top: 20px;
+    height: 500px;
+    width: 700px;
+    background-color: yellow;
+    border-radius: 10px;
+    
+}
+
+#inputBtn{
+    position:absolute;
+    transform:translate(75%,110%);
+    border-radius: 10px;
+    background-color: white;
+}
+
+#sylvester{
+    height: 223px;
+    transform: translate(283%, -377%);
+}
+
+#messageInput {
+    height: 200px;
+    transform:translateY(40%)
+}
+
+.returnBtn {
+    font-size:2em;
+    border-radius: 10px;
+    border: blue solid 2px;
+    background-color: yellow;
+}
+#rtnBtnDiv{
+    
 }

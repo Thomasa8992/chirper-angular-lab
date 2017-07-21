@@ -1,4 +1,6 @@
-<div ng-controller="chirpReq">
-        <p> User: {{ chirpUser }} </p></a>
-        <span>Chirped: {{ chirpMessage }}</span>
+<div ng-controller="singleController" >
+    <div id="result" ng-click="deleteData(singleChirp.id)">
+    <p> User: {{ singleChirp.user }} </p>
+    <span>Chirped: {{ singleChirp.message }}</span>
+    </div>
 </div>
