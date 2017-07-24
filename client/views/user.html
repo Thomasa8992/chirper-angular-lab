@@ -1,11 +1,15 @@
-
-<h1 class="header">Users!</h1>
-<div ng-controller="chirpReq" >
-    <div ng-repeat="chirps in chirpList" id="result">
-        <div ng-click="goToSingle(chirps.id)">
-            <div id="user-input-div">
-                <p id="user">User:</p>
-                <p id="userName"> {{ chirps.user }} </p>
-            </div>
+<div ng-controller="singleUser">
+    <h1 class="header">List of Users</h1>
+    
+    <div ng-repeat="user in oneUser" id="result">
+        <div>
+            <p id="user">User:</p>
+            <p id="userName"> {{ user.user }} </p>
+        </div>
+            <hr>
+            <div id="message">Chirped: </div>
+            <div id="userMessage">{{ user.message }}</div>
+        </div>
     </div>
+    <button>Delete All Chirps</button>
 </div>

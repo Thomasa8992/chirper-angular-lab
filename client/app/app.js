@@ -11,8 +11,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         }).when('/add', {
             templateUrl: '../views/add.html'
         }).when('/users', {
+            templateUrl: '../views/users.html'
+        }).when('/user/:user', {
             templateUrl: '../views/user.html'
-            
         })
 
     }]);
@@ -22,6 +23,9 @@ controlApp.controller('chirpReq', function($scope, $http, $location, $routeParam
     $scope.goToSingle = function(id){
         $location.path("/single/one/" + id);           
     } 
+    $scope.goToUser = function(users){
+        $location.path("/user/" + users);           
+    }
     $http.get('/api/chirps')
     .then(function (response) {
       $scope.chirpList = response.data;
@@ -75,18 +79,24 @@ controlApp.controller("singleController", function($scope, $routeParams, $http, 
     }
 }); 
 
-// controlApp.controller("userControl", function($scope, $http){
-//     $http.get('/api/users')
-//     .then(function (response) {
-//       $scope.userList = response.data;
-//     });
-// })
-
-
-// controlApp.controller("userControl", function($scope, $http){ 
-//     $http.get('/api/users')
-//        .then(function (response) {
-//             $scope.singleChirp = response.data;
-//     });
-//     });
+controlApp.controller("userControl", function($scope, $http){ 
+    $http.get('/api/users')
+       .then(function (response) {
+            $scope.userList = response.data;
+            $http.get('/api/chirps')
+                .then(function (response) {
+            });
+    });
+});
     
+controlApp.controller("singleUser", function($scope, $http, $routeParams){ 
+    $http.get('/api/chirps/user/' + $routeParams.user)
+       .then(function (response) {
+            $scope.oneUser = response.data;
+            console.log($scope.oneUser)
+        });
+         $scope.goToUser = function(users){
+            $location.path("/user/" + users);           
+        }
+    
+});

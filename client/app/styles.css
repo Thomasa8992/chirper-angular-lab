@@ -15,13 +15,13 @@ body{
 /**********************/
 /* The navigation bar */
 .navbar {
-    margin-top: 20px;
+    margin-top: 10px;
     overflow: hidden;
     background-color: yellow;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 90%; /* Full width */
-    border: darkblue 2px solid;
+    position: fixed; 
+    top: 0; 
+    width: 60%; 
+    border: blue 2px solid;
     border-radius: 10px;
 }
 
@@ -43,10 +43,75 @@ body{
 /**********************/
 /*      sidebar       */
 /**********************/
+#userOptions {
+    margin-top: 70px;
+    
+}
 
+#sidenav{
+    position: fixed;
+    margin-top: 250px;
+    width: 20%;
+    height: 500px;
+    background: yellow;
+    float:left;
+    border-radius: 10px;
+    color: blue;
+    border: blue 2px solid;
+}
+
+select{
+    margin-top: 0%;
+    transform: translateX(220%);
+}
+
+#userSide {
+    text-align: center;
+}
+
+.index-input {
+    width: 200px;
+    height: 30px;
+    font-size: 1em;
+}
+
+#index-button {
+    width:100px;
+    height: 30px;
+    font-size: .8em;    
+    text-align: center;
+}
+
+#index-input-div {
+    transform: translatey(-20%);
+}
+
+#whole-input {
+    transform: translatey(20%)
+}
+
+#sylvester-one {
+    height: 200px;
+    transform: translate(-15%, -230%)
+    
+}
+
+#sylvester-two {
+    height: 200px;
+    transform:translate(25%, -40%) rotate(180deg);
+}
+#index-submit {
+    transform: translateY(-20%);
+    height: 30px;
+    font-size: 1em;
+}
 /**********************/
 /*        Home        */
 /**********************/
+#content-container{
+    float: right;
+    transform: translateX(-10%);
+}
 .subBtn {
     font-size: 1em;
     border: 2px solid blue;
@@ -57,6 +122,7 @@ body{
 #tweety{
     transform: translateX(40%);
 }
+
 #tweetieBtn {
     transform: translateX(70%) translateY(-2110%);
 }
@@ -72,10 +138,11 @@ body{
     position:relative;
     margin-top: 200px;
     height: 600px;
-    width: 1200px;
+    width: 800px;
     background-color: yellow;
     border-radius: 10px;
-    transform:translateY(-10%)    
+    transform:translate(50%, -10%);
+    border: 2px blue solid;    
 }
 
 #messageInput {
@@ -97,17 +164,16 @@ body{
 }
 #sylvester{
     height: 300px;
-    transform: translate(-17%, -151%);
+        transform: translate(149%, -191%);
 }
 
 #tweety-add {
     height: 200px;
-    transform: translate(513%, -49%);
+    transform: translate(-270%, -49%);
 }
 
 .input-messages {
-    width: 900px;
-    
+    width: 600px;
 }
 /***********************/
 /* List && Single Page */
@@ -120,7 +186,7 @@ body{
     border: 5px solid red;
     border-radius: 50%;
     height: 75px;
-    transform: translate(-10%, -30%); 
+    transform: translate(30%, -30%); 
 }
 
 #taz-delete-one {
@@ -147,6 +213,7 @@ body{
 }
 
 #result {
+    color: blue;
     float: right;
     border: 2px solid black;
     border-radius: 10px;
@@ -154,6 +221,7 @@ body{
     margin: 50px;
     word-wrap: break-word;
     width: 700px;
+    border: 2px blue solid;        
 }
 
 #userName {
@@ -162,9 +230,10 @@ body{
 }
 
 hr {
-    width: 1000px;
-    margin-bottom: 30px 0;
+    width: 500px;
+    margin-bottom: 30px auto;
     color:blue;
+    
     
 }
 

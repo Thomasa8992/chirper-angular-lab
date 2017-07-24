@@ -5,13 +5,13 @@
         <div ng-click="deleteData(chirps.id)" id="taz-div">         
             <img id="taz-delete-one" src="https://s-media-cache-ak0.pinimg.com/originals/b3/ce/6d/b3ce6d2834da3416e91c71e6db816f4c.jpg" alt="">
         </div>
-        <div ng-click="goToSingle(chirps.id)">
+        <div >
             <div id="user-input-div">
-                <a href="#users"><p id="user">User:</p></a>
-                <p id="userName"> {{ chirps.user }} </p>
+                <p id="user">User:</p>
+                <p ng-click="goToUser(chirps.user)" id="userName"> {{ chirps.user }} </p>
             </div>
             <hr>
-            <div id="message">Chirped: </div>
+            <div ng-click="goToSingle(chirps.id)" id="message">Chirped: </div>
             <div id="userMessage">{{ chirps.message }}</div>
         </div>
     </div>
