@@ -10,7 +10,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../views/single.html'
         }).when('/add', {
             templateUrl: '../views/add.html'
-        });
+        }).when('/users', {
+            templateUrl: '../views/user.html'
+            
+        })
 
     }]);
     
@@ -25,7 +28,7 @@ controlApp.controller('chirpReq', function($scope, $http, $location, $routeParam
     });
 
     $scope.deleteData = function(id){
-        $http.delete("/api/chirps/" + id)
+        $http.delete("/api/chirps/one/" + id)
             .success(function(response){
                 $http.get('/api/chirps')
                 .then(function (response) {
@@ -56,12 +59,12 @@ $scope.insertData = function(){
 
 controlApp.controller("singleController", function($scope, $routeParams, $http, $location){
     var myId = $routeParams.id;    
-    $http.get("/api/chirps/" + myId)
+    $http.get("/api/chirps/one/" + myId)
        .then(function (response) {
             $scope.singleChirp = response.data;
     });
     $scope.deleteData = function(id){
-        $http.delete("/api/chirps/" + id)
+        $http.delete("/api/chirps/one/" + id)
             .success(function(response){
                 $http.get('/api/chirps')
                 .then(function (response) {
@@ -72,5 +75,18 @@ controlApp.controller("singleController", function($scope, $routeParams, $http, 
     }
 }); 
 
+// controlApp.controller("userControl", function($scope, $http){
+//     $http.get('/api/users')
+//     .then(function (response) {
+//       $scope.userList = response.data;
+//     });
+// })
 
 
+// controlApp.controller("userControl", function($scope, $http){ 
+//     $http.get('/api/users')
+//        .then(function (response) {
+//             $scope.singleChirp = response.data;
+//     });
+//     });
+    

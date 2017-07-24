@@ -7,17 +7,12 @@
         </div>
         <div ng-click="goToSingle(chirps.id)">
             <div id="user-input-div">
-                <p id="user">User:  </p>
+                <a href="#users"><p id="user">User:</p></a>
                 <p id="userName"> {{ chirps.user }} </p>
             </div>
             <hr>
             <div id="message">Chirped: </div>
             <div id="userMessage">{{ chirps.message }}</div>
         </div>
-         
     </div>
-</div>
-<div id="rtnBtnDiv">
-    <a href="#/"><button class="returnBtn">return home</button>
-    <a href="#add"><button class="returnBtn">Make a new Chirp!</button></a>
 </div>
