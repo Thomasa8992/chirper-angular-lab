@@ -13,19 +13,19 @@ body{
 /**********************/
 /*      navbar        */
 /**********************/
-/* The navigation bar */
 .navbar {
     margin-top: 10px;
     overflow: hidden;
     background-color: yellow;
     position: fixed; 
     top: 0; 
-    width: 60%; 
+    /*width: 30%; */
     border: blue 2px solid;
     border-radius: 10px;
+    z-index: 10;
+    padding: 0 450px;
 }
 
-/* Links inside the navbar */
 .navbar a {
     float: left;
     display: block;
@@ -35,9 +35,8 @@ body{
     text-decoration: none;
 }
 
-/* Main content */
 .main {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
+    margin-top: 30px; 
 }
 
 /**********************/
@@ -45,7 +44,6 @@ body{
 /**********************/
 #userOptions {
     margin-top: 70px;
-    
 }
 
 #sidenav{
@@ -69,8 +67,13 @@ select{
     text-align: center;
 }
 
+#index-chirp{
+    text-align: center;
+    transform: translatey(200%);    
+}
+
 .index-input {
-    width: 200px;
+    width: 80%;
     height: 30px;
     font-size: 1em;
 }
@@ -92,13 +95,13 @@ select{
 
 #sylvester-one {
     height: 200px;
-    transform: translate(-15%, -230%)
+    transform: translate(-15%, -215%)
     
 }
 
 #sylvester-two {
     height: 200px;
-    transform:translate(25%, -40%) rotate(180deg);
+    transform:translate(23%, -20%) rotate(180deg);
 }
 #index-submit {
     transform: translateY(-20%);
@@ -129,6 +132,10 @@ select{
 
 #listBtn {
     transform: translate(28%, -700%);
+}
+select {
+    font-size: 2em;
+    transform: translate(30%, 50%);    
 }
 
 /***********************/
@@ -200,6 +207,7 @@ select{
     font-size: 2em;
     margin: 20px;
     text-align: center;
+
 }
 
 #message {
@@ -227,6 +235,7 @@ select{
 #userName {
     font-size: 2em;    
     text-align: center;
+    color: red;
 }
 
 hr {
@@ -241,6 +250,7 @@ hr {
     margin: 40px 40px;
     font-size: 2em;
     text-align: center;
+    color: red;
 }
 
 
@@ -264,3 +274,8 @@ input {
     background-color: yellow;
 }
 
+#bugs-bunny {
+    height: 200px;
+    transform: translateY(-50%);
+    margin: 20px;
+}

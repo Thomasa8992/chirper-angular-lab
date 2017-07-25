@@ -23,41 +23,49 @@ controlApp.controller('chirpReq', function($scope, $http, $location, $routeParam
     $scope.goToSingle = function(id){
         $location.path("/single/one/" + id);           
     } 
+
     $scope.goToUser = function(users){
         $location.path("/user/" + users);           
     }
+    
     $http.get('/api/chirps')
     .then(function (response) {
       $scope.chirpList = response.data;
     });
 
-    $scope.deleteData = function(id){
+    $scope.deleteChirp = function(id){
         $http.delete("/api/chirps/one/" + id)
-            .success(function(response){
-                $http.get('/api/chirps')
-                .then(function (response) {
-                console.log(response);
-                $scope.chirpList = response.data;
+            .then(function(success) {
+            var chirps = $scope.chirps;
+
+            chirps = chirps.filter(function(chirp) {
+                if (chirp.id !== id) {
+                    return chirp;
+                }
             });
-        });    
+
+            $scope.chirps = chirps;
+        });   
     }
 });    
 
 
 controlApp.controller('postReq', function($scope, $http, $location, $routeParams) {
 $scope.insertData = function(){
+    if ($scope.user === '' || $scope.message === '') {
+            alert('fill out all fields');
+    }else{
         $http.post('/api/chirps', {'user': $scope.user,'message': $scope.message})
             .success(function(response){
-            console.log("sent post");
             $scope.user = "";
             $scope.message = "";
             $location.path("/list/");           
             $http.get('/api/chirps')
                 .then(function (response) {
-                console.log(response);
                 $scope.chirpList = response.data;
             });
         });
+    }
     }
 });
 
@@ -67,36 +75,47 @@ controlApp.controller("singleController", function($scope, $routeParams, $http, 
        .then(function (response) {
             $scope.singleChirp = response.data;
     });
-    $scope.deleteData = function(id){
+    $scope.deleteChirp = function(id){
         $http.delete("/api/chirps/one/" + id)
             .success(function(response){
                 $http.get('/api/chirps')
                 .then(function (response) {
-                console.log(response);
                 $location.path("/list/"); 
             });
         });    
     }
 }); 
 
-controlApp.controller("userControl", function($scope, $http){ 
+controlApp.controller("userControl", function($scope, $http, $location){ 
     $http.get('/api/users')
-       .then(function (response) {
-            $scope.userList = response.data;
-            $http.get('/api/chirps')
-                .then(function (response) {
-            });
+    .then(function (response) {
+        $scope.userList = response.data;
     });
 });
     
-controlApp.controller("singleUser", function($scope, $http, $routeParams){ 
+controlApp.controller("singleUser", function($scope, $http, $routeParams, $location){ 
     $http.get('/api/chirps/user/' + $routeParams.user)
        .then(function (response) {
             $scope.oneUser = response.data;
-            console.log($scope.oneUser)
-        });
-         $scope.goToUser = function(users){
-            $location.path("/user/" + users);           
-        }
-    
+        });  
+        $scope.deleteData = function(user){
+            $http.delete("/api/chirps/user/" + user)
+            .success(function(response){
+                $location.path("/list/"); 
+        });             
+    }
 });
+
+function goToNewPage(element) {
+    // var EleValue = element.value;
+    if(element.value == "Users"){
+        window.location = "#/users/";
+    }else{
+        window.location = "#/user/" + element.value;
+    }
+}
+
+
+// function goToNewPage(element) {
+//     window.location = "#/user/" + element.value;
+// }
