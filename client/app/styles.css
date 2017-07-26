@@ -83,6 +83,9 @@ select{
     height: 30px;
     font-size: .8em;    
     text-align: center;
+    background-color: blue;
+    color: yellow;
+    border: 2px lightblue solid;
 }
 
 #index-input-div {
@@ -235,7 +238,7 @@ select {
 #userName {
     font-size: 2em;    
     text-align: center;
-    color: red;
+    color: darkgreen;
 }
 
 hr {
@@ -250,7 +253,7 @@ hr {
     margin: 40px 40px;
     font-size: 2em;
     text-align: center;
-    color: red;
+    color: Darkgreen;
 }
 
 
@@ -278,4 +281,11 @@ input {
     height: 200px;
     transform: translateY(-50%);
     margin: 20px;
+}
+
+#delete-all {
+    font-size: 2em;
+    border-radius: 10px;
+    background-color: red;
+    margin-bottom: 2px;
 }
