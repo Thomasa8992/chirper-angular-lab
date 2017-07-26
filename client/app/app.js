@@ -34,22 +34,18 @@ controlApp.controller('chirpReq', function($scope, $http, $location, $routeParam
     });
 
     $scope.deleteChirp = function(id){
+        $scope.deleteChirp = function(id){
         $http.delete("/api/chirps/one/" + id)
-            .then(function(success) {
-            var chirps = $scope.chirps;
-
-            chirps = chirps.filter(function(chirp) {
-                if (chirp.id !== id) {
-                    return chirp;
-                }
+            .success(function(response){
+                $http.get('/api/chirps')
+                .then(function (response) {
+                $location.path("/list/"); 
             });
-
-            $scope.chirps = chirps;
-        });   
-    }
+        });              
+        };  
+    }    
 });    
-
-
+  
 controlApp.controller('postReq', function($scope, $http, $location, $routeParams) {
 $scope.insertData = function(){
     if ($scope.user === '' || $scope.message === '') {
